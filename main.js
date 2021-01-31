@@ -1,5 +1,4 @@
-// globale 
-var currentPlayer = 'X';
+//globale 
 
 
 //factory function
@@ -11,16 +10,22 @@ const spillBrett = () => {
 }
 console.log(spillBrett());
 
-//  Alternerer tur for spillere, og endrer knapper i DOM
-const byttTur = (klikk) => {
-	if (currentPlayer === 'X') {
-		currentPlayer = 'O';
-	} else 
-		currentPlayer = 'X';
-	//endrer DOM element til 'X' eller 'O' - MÅ ENDRES!!
-	saus =	document.getElementById(klikk).innerHTML = currentPlayer;
-	return currentPlayer;
-}
+//Alternerer tur for spillere, og endrer knapper i DOM
+const byttTur = (() => {
+	var currentPlayer = 'X';
+	var turBytte = function turBytte(klikk) {
+		if (currentPlayer === 'X') {
+			currentPlayer = 'O';
+		} else 
+			currentPlayer = 'X';
+		//Endrer innhold i DOM element til 'X' eller 'O'
+		saus =	document.getElementById(klikk).innerHTML = currentPlayer;
+		return currentPlayer;
+	};
+	return {
+		turBytte: turBytte
+	};
+})();
 
 //modul
 var APP = (function module() {
@@ -81,6 +86,7 @@ var APP = (function module() {
 
 
 
-			// if this.playersTurn === player1 {
-			//		merke = x; 
-			//};
+// console.log(ruter.includes('a')); //true/false
+
+
+// Vinnerbetingelsen: 1: a, b, c / d, e, f / g, h, i / a, d, g / b, e, h / c, f, i / a, e, i / c, e, g 
