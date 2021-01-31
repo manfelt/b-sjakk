@@ -1,3 +1,7 @@
+// globale 
+var currentPlayer = 'X';
+
+
 //factory function
 const spillBrett = () => {
     const player1 = "X";
@@ -7,17 +11,15 @@ const spillBrett = () => {
 }
 console.log(spillBrett());
 
-//  Alternerer tur for spillere
-var currentPlayer = 'X';
-const spillerTur = () => {
+//  Alternerer tur for spillere, og endrer knapper i DOM
+const byttTur = (klikk) => {
 	if (currentPlayer === 'X') {
 		currentPlayer = 'O';
 	} else 
 		currentPlayer = 'X';
 	//endrer DOM element til 'X' eller 'O' - MÅ ENDRES!!
-	saus =	document.getElementById("a").innerHTML = currentPlayer;
+	saus =	document.getElementById(klikk).innerHTML = currentPlayer;
 	return currentPlayer;
-	
 }
 
 //modul
