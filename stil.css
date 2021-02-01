@@ -1,3 +1,7 @@
+* {
+  font-family: Montserrat;
+}
+
 .header {
   height: 50px;
   display: -webkit-box;
@@ -10,6 +14,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid black;
+  color: #9bc;
 }
 
 .grid {
@@ -26,5 +31,36 @@
   padding: 15px;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+.card {
+  height: 100px;
+  width: 100px;
+  border-radius: 1.5rem/2rem;
+  -webkit-box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  overflow: hidden;
+}
+
+.card .card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 100%;
+  background: lightblue;
+  z-index: 3;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  text-align: center;
+  font-weight: bold;
+}
+
+.card .turDisplay {
+  margin-top: 50%;
+  margin-left: 35%;
+  font-size: xx-large;
 }
 /*# sourceMappingURL=stil.css.map */

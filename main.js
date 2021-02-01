@@ -1,11 +1,11 @@
 //globale 
-
+var ruter = [];
 
 //factory function
 const spillBrett = () => {
     const player1 = "X";
     const player2 = "O";
-	var ruter = [];
+	
     return {ruter, player1, player2};
 }
 console.log(spillBrett());
@@ -13,14 +13,16 @@ console.log(spillBrett());
 //Alternerer tur for spillere, og endrer knapper i DOM
 const byttTur = (() => {
 	var currentPlayer = 'X';
+
 	var turBytte = function turBytte(klikk) {
+		sad = ruter.push(klikk); 
 		if (currentPlayer === 'X') {
 			currentPlayer = 'O';
 		} else 
 			currentPlayer = 'X';
 		//Endrer innhold i DOM element til 'X' eller 'O'
 		saus =	document.getElementById(klikk).innerHTML = currentPlayer;
-		return currentPlayer;
+		return {currentPlayer, ruter};
 	};
 	return {
 		turBytte: turBytte
