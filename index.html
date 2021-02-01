@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,10 @@
     <link href="stil.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>b-sjakk</h1>
     </header>
+
 
     <div class="grid">
         <button id="a" onclick="byttTur.turBytte(this.id)">1</button>
@@ -21,9 +22,23 @@
         <button id="f" onclick="byttTur.turBytte(this.id)">6</button>
         <button id="g" onclick="byttTur.turBytte(this.id)">7</button>
         <button id="h" onclick="byttTur.turBytte(this.id)">8</button>
-        <button id="9" onclick="byttTur.turBytte(this.id)">9</button>
+        <button id="i" onclick="byttTur.turBytte(this.id)">9</button>
     </div>
 
+    <div class="desc">
+        
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <p>Tur:</p>
+        </div>
+
+        <p id="turDisplay" class="turDisplay">
+            X
+        </p>
+
+    </div>
     
     <script src="main.js"></script>
 </body>

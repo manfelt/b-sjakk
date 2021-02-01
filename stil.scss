@@ -1,9 +1,14 @@
+* {
+    font-family: Montserrat;
+}
+
 .header {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid black;
+    color: #9bc; 
   }
 
 .grid {
@@ -15,5 +20,31 @@
         background: peru;
         padding: 15px;
         justify-self: end;
+    }
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    border-radius: 1.5rem/2rem;
+    box-shadow: 8px 10px 16px rgba(0,0,0,0.1);
+    transform: translateZ(0);
+    overflow: hidden;
+    .card-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 100%;
+        background: lightblue;
+        z-index: 3;
+        transform: translateZ(0);
+        text-align: center;
+        font-weight: bold;
+    }
+    .turDisplay {
+        margin-top: 50%;
+        margin-left: 35%;
+        font-size: xx-large;
     }
 }
