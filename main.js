@@ -1,32 +1,23 @@
-//globale 
-var ruter = [];
-
-//factory function
-const spillBrett = () => {
-    const player1 = "X";
-    const player2 = "O";
-	
-    return {ruter, player1, player2};
-}
-
-//Alternerer tur for spillere, og endrer knapper i DOM
+//Kjernen av scriptet. Alternerer tur for spillere, og endrer knapper i DOM
 const byttTur = (() => {
-	let currentPlayer = 'O';
+	let vunnet = 0;
+	var ruter = [];
 	let player1 = [];
 	let player2 = [];
-	let prevPlayer = currentPlayer;
+	let currentPlayer = 'O';
 
 	//Legger til indeksert rute inn i rute-matrisen
 	var leggTil = x => {
 		ruter.push(x);
 	}
-
+	//Legger til indeksert rute inn i spiller-matrisen
 	var spillerTrekk = (a, b) => {
 		a.push(b);
 	}
 	//Mottar input fra DOM, sjekker om trekket er i rute-matrisen, sjekker hvilken spiller som sist spilte og skifter spillertur. 
 	var turBytte = function turBytte(klikk) {
-		if (ruter.includes(klikk)) {
+		let prevPlayer = currentPlayer;
+		if ((ruter.includes(klikk))||(vunnet>0)) {
 			console.log("Ulovlig trekk ⚠️");
 			return;
 		}
@@ -34,20 +25,27 @@ const byttTur = (() => {
 			currentPlayer = 'O';
 			prevPlayer = 'X';
 			spillerTrekk(player1, klikk);
-			console.log(player1);
+			if (sjekkVinner(player1, currentPlayer)){
+				vunnet = 1;
+			}
+			
 		} else {
 			currentPlayer = 'X';
 			prevPlayer = 'O';
 			spillerTrekk(player2, klikk);
-			console.log(player2);
+			if (sjekkVinner(player2, currentPlayer)){
+				vunnet = 1;
+			}
 		}
 		//Endrer innhold i DOM element til 'X' eller 'O'
 		document.getElementById(klikk).innerHTML = currentPlayer;
-		document.getElementById("turDisplay").innerHTML = prevPlayer;
+		if (vunnet>0) {
+			document.getElementById("turDisplay").innerHTML = "🔚";
+		} else {
+			document.getElementById("turDisplay").innerHTML = prevPlayer;
+		}
 		leggTil(klikk);
-		sjekkVinner(player1);
-		sjekkVinner(player2);
-		//console.log(ruter);
+
 		return {currentPlayer, ruter};
 	};
 	return {
@@ -56,33 +54,45 @@ const byttTur = (() => {
 })();
 
 //Ser om enten av spillerne oppfyller et av vilkårene for å vinne runden. (kan gjøres om til en foreach loop.)
-const sjekkVinner = (spiller) => {
-	var vinner;
+const sjekkVinner = (spiller, navn) => {
+	var vinner = () => {
+		document.getElementById("statusDisplay").innerHTML = `✨Seieren går til ${navn}`;
+		console.log(`✨Seieren går til ${navn}`);
+		
+		return true;
+	}
 	if ((spiller.includes('a'))&&(spiller.includes('b'))&&(spiller.includes('c'))) {
-		console.log("✨Seieren går til abc");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('d'))&&(spiller.includes('e'))&&(spiller.includes('f'))) {
-		console.log("✨Seieren går til def");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('g'))&&(spiller.includes('h'))&&(spiller.includes('i'))) {
-		console.log("✨Seieren går til ghi");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('a'))&&(spiller.includes('d'))&&(spiller.includes('g'))) {
-		console.log("✨Seieren går til adg");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('b'))&&(spiller.includes('e'))&&(spiller.includes('h'))) {
-		console.log("✨Seieren går til beh");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('c'))&&(spiller.includes('f'))&&(spiller.includes('i'))) {
-		console.log("✨Seieren går til cfi");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('a'))&&(spiller.includes('e'))&&(spiller.includes('i'))) {
-		console.log("✨Seieren går til aei");
+		vinner();
+		return true;
 	}
 	if ((spiller.includes('c'))&&(spiller.includes('e'))&&(spiller.includes('g'))) {
-		console.log("✨Seieren går til ceg");
+		vinner();
+		return true;
 	}
-	
 	return false;
 }
 
