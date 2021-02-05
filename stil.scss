@@ -16,18 +16,19 @@ html, body {
     justify-content: center;
     display: grid;
     margin-top: 5%;
-    margin-left: 40%;
+    margin-left: 38%;
     height: 500px;
     width: 500px;
     .grid {
-        background: #bbada0;
+        background: #4d463a;;
         display: grid;
         grid-gap: 1px;
         grid-template-columns: repeat(3, 1fr);
         width: inherit;
         .r {
             color: #4d463a;
-            font-size: 16px;
+            background: #bbada0;
+            font-size: 35px;
             text-transform: uppercase;
             border: 0;
             padding: 10px 0;
@@ -49,7 +50,7 @@ html, body {
         left: 0;
         height: 35px;
         width: 100%;
-        background: lightblue;
+        background: #bbada0;
         z-index: 3;
         transform: translateZ(0);
         text-align: center;
@@ -70,5 +71,6 @@ html, body {
 
     }
     .statusDisplay {
-    color: red;
+    color: #776E65;
+}
 }

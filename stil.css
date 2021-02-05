@@ -1,9 +1,6 @@
-* {
-  font-family: Montserrat;
-}
-
 html, body {
   background: #faf8ef;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .header {
@@ -28,13 +25,13 @@ html, body {
   display: -ms-grid;
   display: grid;
   margin-top: 5%;
-  margin-left: 40%;
-  height: 355px;
-  width: 355px;
+  margin-left: 38%;
+  height: 500px;
+  width: 500px;
 }
 
 .grid-container .grid {
-  background: #776E65;
+  background: #4d463a;
   display: -ms-grid;
   display: grid;
   grid-gap: 1px;
@@ -43,20 +40,15 @@ html, body {
   width: inherit;
 }
 
-.grid-container .grid div {
-  padding: 15px;
-  -ms-grid-column-align: end;
-      justify-self: end;
+.grid-container .grid .r {
+  color: #4d463a;
+  background: #bbada0;
+  font-size: 35px;
+  text-transform: uppercase;
+  border: 0;
+  padding: 10px 0;
 }
 
-.r {
-    color: #4d463a;
-    font-size: 16px;
-    text-transform: uppercase;
-    border: 0;
-    padding: 10px 0;
-    background: #bbada0;
-}
 .card {
   height: 100px;
   width: 100px;
@@ -75,7 +67,7 @@ html, body {
   left: 0;
   height: 35px;
   width: 100%;
-  background: lightblue;
+  background: #bbada0;
   z-index: 3;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
@@ -98,4 +90,7 @@ html, body {
   background: lightblue;
 }
 
+.status .statusDisplay {
+  color: #776E65;
+}
 /*# sourceMappingURL=stil.css.map */
