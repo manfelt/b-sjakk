@@ -2,6 +2,10 @@
   font-family: Montserrat;
 }
 
+html, body {
+  background: #faf8ef;
+}
+
 .header {
   height: 50px;
   display: -webkit-box;
@@ -14,28 +18,49 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid black;
-  color: #9bc;
+  color: #776E65;
 }
 
-.grid {
+.grid-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  margin-top: 5%;
+  margin-left: 40%;
+  height: 355px;
+  width: 355px;
+}
+
+.grid-container .grid {
+  background: #776E65;
   display: -ms-grid;
   display: grid;
   grid-gap: 1px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  width: 5%;
+  width: inherit;
 }
 
-.grid div {
-  background: peru;
+.grid-container .grid div {
   padding: 15px;
   -ms-grid-column-align: end;
       justify-self: end;
 }
 
+.r {
+    color: #4d463a;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 0;
+    padding: 10px 0;
+    background: #bbada0;
+}
 .card {
   height: 100px;
   width: 100px;
+  margin-left: 40%;
   border-radius: 1.5rem/2rem;
   -webkit-box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
           box-shadow: 8px 10px 16px rgba(0, 0, 0, 0.1);
@@ -63,4 +88,14 @@
   margin-left: 35%;
   font-size: xx-large;
 }
+
+.status {
+  color: #776E65;
+  margin-left: 40%;
+}
+
+.status .satus-header {
+  background: lightblue;
+}
+
 /*# sourceMappingURL=stil.css.map */
