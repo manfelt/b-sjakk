@@ -19,6 +19,7 @@ const byttTur = (() => {
 		let prevPlayer = currentPlayer;
 		if ((ruter.includes(klikk))||(vunnet>0)) {
 			console.log("Ulovlig trekk ⚠️");
+			document.getElementById("statusDisplay").innerHTML = "Ulovlig trekk ⚠️";
 			return;
 		}
 		if (currentPlayer === 'X') {
@@ -56,7 +57,7 @@ const byttTur = (() => {
 //Ser om enten av spillerne oppfyller et av vilkårene for å vinne runden. (kan gjøres om til en foreach loop.)
 const sjekkVinner = (spiller, navn) => {
 	var vinner = () => {
-		document.getElementById("statusDisplay").innerHTML = `✨Seieren går til ${navn}`;
+		document.getElementById("statusDisplay").innerHTML = `Seieren går til ${navn}✨`;
 		console.log(`✨Seieren går til ${navn}`);
 		
 		return true;

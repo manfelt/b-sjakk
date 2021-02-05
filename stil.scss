@@ -1,31 +1,44 @@
-* {
-    font-family: Montserrat;
+html, body {
+    background: #faf8ef;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 }
-
 .header {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid black;
-    color: #9bc; 
+    color: #776E65; 
   }
 
-.grid {
+
+.grid-container {
+    justify-content: center;
     display: grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(3, 1fr);
-    width: 5%;
-    div {
-        background: peru;
-        padding: 15px;
-        justify-self: end;
+    margin-top: 5%;
+    margin-left: 40%;
+    height: 500px;
+    width: 500px;
+    .grid {
+        background: #bbada0;
+        display: grid;
+        grid-gap: 1px;
+        grid-template-columns: repeat(3, 1fr);
+        width: inherit;
+        .r {
+            color: #4d463a;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: 0;
+            padding: 10px 0;
+        }
     }
 }
 
 .card {
     height: 100px;
     width: 100px;
+    margin-left: 40%;
     border-radius: 1.5rem/2rem;
     box-shadow: 8px 10px 16px rgba(0,0,0,0.1);
     transform: translateZ(0);
@@ -47,4 +60,15 @@
         margin-left: 35%;
         font-size: xx-large;
     }
+}
+
+.status {
+    color: #776E65;
+    margin-left: 40%;
+    .satus-header {
+        background: lightblue;
+
+    }
+    .statusDisplay {
+    color: red;
 }
